@@ -100,10 +100,13 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
-  
+  use "jesseduffield/lazygit"
+
   --  Flutter
   use "thosakwe/vim-flutter"  
 
+  --  Markdown 
+  use "iamcco/markdown-preview.nvim"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

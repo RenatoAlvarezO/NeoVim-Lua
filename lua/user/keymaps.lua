@@ -88,3 +88,4 @@ keymap('n','<C-j>', ':sb <bar> :terminal <CR> i',{})
 keymap('n','<C-q>', ':q <CR>', {})
 
 keymap('n','<C-i>',':Format <CR>',{})
+keymap('n','<C-g>', '<CMD> lua _LAZYGIT_TOGGLE()<CR>', {})

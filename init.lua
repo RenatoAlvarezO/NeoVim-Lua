@@ -23,3 +23,5 @@ require "user.whichkey"
 require "user.autocommands"
 
 vim.cmd [[set wrap]]
+
+
