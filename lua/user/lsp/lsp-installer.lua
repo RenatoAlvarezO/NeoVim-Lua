@@ -21,6 +21,11 @@ lsp_installer.on_server_ready(function(server)
 	 	opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	 end
 
+	 if server.name == "pyright" then
+	 	local python_opts = require("user.lsp.settings.pyright")
+	 	opts = vim.tbl_deep_extend("force", python_opts, opts)
+	 end
+   
   local my_arduino_fqbn = {
     ["/home/h4ck3r/dev/arduino/blink"] = "arduino:avr:nano",
     ["/home/h4ck3r/dev/arduino/sensor"] = "arduino:mbed:nanorp2040connect",
