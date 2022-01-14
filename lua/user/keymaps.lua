@@ -75,11 +75,14 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("n","<C-b>",":NvimTreeToggle <CR>",{}) -- Toggles Tree
 keymap("i","<C-b>","<ESC> :NvimTreeToggle <CR>",{}) -- Toggles Tree
 
-keymap("n","<C-s>",":w <CR>",{}) --  Vainilla Save
-keymap("i","<C-s>","<ESC> :w <CR> i",{}) -- Save (Insert Mode)
+keymap("n","<C-s>",":w <CR>",opts) --  Vainilla Save
+keymap("i","<C-s>","<ESC> :w <CR> i",opts) -- Save (Insert Mode)
 keymap("","<C-c>",'"+y <CR>',{}) -- Copy to system clipboard
-keymap("","<C-p>",":Files <CR>",{}) -- Search Files
-keymap("","<C-f>",":Rg ",{}) --  Search In Files
+
+keymap("","<C-p>","<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",{}) -- Search Files
+keymap("","<C-f>","<cmd>Telescope live_grep<cr>",{}) --  Search In Files
+-- keymap("","<C-p>",":Files <CR>",{}) -- Search Files
+-- keymap("","<C-f>",":Rg ",{}) --  Search In Files
 
 keymap('n', '<C-_>', '<CMD>lua require("Comment.api").toggle_current_linewise()<CR>',{})
 keymap('x', '<C-_>', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>',{})
@@ -89,3 +92,8 @@ keymap('n','<C-q>', ':q <CR>', {})
 
 keymap('n','<C-i>',':Format <CR>',{})
 keymap('n','<C-g>', '<CMD> lua _LAZYGIT_TOGGLE()<CR>', {})
+--
+keymap('n','dd','"_dd',opts)
+keymap('v','d','"_d',opts)
+--
+keymap('n','cc','cc <ESC>',opts)
