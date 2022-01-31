@@ -23,6 +23,4 @@ require "user.whichkey"
 require "user.autocommands"
 require "user.gitblamer"
 
-vim.cmd [[set wrap]]
-
 
