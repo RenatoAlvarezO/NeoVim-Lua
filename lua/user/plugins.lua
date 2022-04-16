@@ -63,6 +63,13 @@ return packer.startup(function(use)
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   --  use "lunarvim/darkplus.nvim"
   use "morhetz/gruvbox"
+  -- use "arcticicestudio/nord-vim"
+  use "FelipeCRamos/nord-vim-darker"
+  use "overcache/NeoSolarized"
+  use "ayu-theme/ayu-vim"
+  use "sainnhe/everforest"
+  use "rainglow/vim"
+  -- use "emigr2k1/vim-aritim-nord"
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
