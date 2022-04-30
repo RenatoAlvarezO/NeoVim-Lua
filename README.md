@@ -1,14 +1,14 @@
-# Neovim from scratch
+# Neovim LuaConfig
 
-Each video will be associated with a branch so checkout the one you are interested in, you can follow along with this [playlist](https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ).
+Based on LunarVim
 
 ## Try out this config
 
 Make sure to remove or move your current `nvim` directory
 
-**IMPORTANT** requires `Neovim 0.6 release` version
+**IMPORTANT** requires `Neovim 0.7 release` version
 ```
-git clone https://github.com/LunarVim/Neovim-from-scratch.git ~/.config/nvim
+git clone https://github.com/RenatoAlvarezO/NeoVim-Lua ~/.config/nvim
 ```
 
 Run `nvim` and wait for the plugins to be installed 
