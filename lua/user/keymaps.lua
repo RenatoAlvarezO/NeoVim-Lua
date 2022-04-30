@@ -32,10 +32,10 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 --keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<C-Right>", ":bnext<CR>", opts)
-keymap("n", "<C-Left>", ":bprevious<CR>", opts)
---keymap("n", "<s-l>", ":bnext<cr>", opts)
---keymap("n", "<s-h>", ":bprevious<cr>", opts)
+-- keymap("n", "<C-Right>", ":bnext<CR>", opts)
+-- keymap("n", "<C-Left>", ":bprevious<CR>", opts)
+keymap("n", "<s-l>", ":bnext<cr>", opts)
+keymap("n", "<s-h>", ":bprevious<cr>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -87,13 +87,14 @@ keymap("","<C-f>","<cmd>Telescope live_grep<cr>",{}) --  Search In Files
 keymap('n', '<C-_>', '<CMD>lua require("Comment.api").toggle_current_linewise()<CR>',{})
 keymap('x', '<C-_>', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>',{})
 
-keymap('n','<C-j>', ':sb <bar> :terminal <CR> i',{})
 keymap('n','<C-q>', ':q <CR>', {})
 
-keymap('n','<C-i>',':Format <CR>',{})
+-- keymap('n','<C-i>',':Format <CR>',{})
 keymap('n','<C-g>', '<CMD> lua _LAZYGIT_TOGGLE()<CR>', {})
 --
-keymap('n','dd','"_dd',opts)
-keymap('v','d','"_d',opts)
---
-keymap('n','cc','cc <ESC>',opts)
+keymap('n','<C-z>','u',opts)
+-- autoformat reconfig
+keymap('n','<TAB>',":Format <CR>",{})
+
+keymap('n','<C-d>','<cmd>lua require(\'diaglist\').open_all_diagnostics()<cr>',opts)
+

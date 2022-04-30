@@ -47,7 +47,11 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
+  use {
+    "kyazdani42/nvim-tree.lua",
+    commit="ce463a5"
+
+  }
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
@@ -60,16 +64,13 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  --  use "lunarvim/darkplus.nvim"
   use "morhetz/gruvbox"
-  -- use "arcticicestudio/nord-vim"
   use "FelipeCRamos/nord-vim-darker"
   use "overcache/NeoSolarized"
   use "ayu-theme/ayu-vim"
   use "sainnhe/everforest"
   use "rainglow/vim"
-  -- use "emigr2k1/vim-aritim-nord"
+
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -82,8 +83,6 @@ return packer.startup(function(use)
   use "junegunn/fzf.vim"
   use "dart-lang/dart-vim-plugin"
   --  NERDTree  
-  -- use 'scrooloose/nerdtree'
-  -- use 'tiagofumo/vim-nerdtree-syntax-highlight'
   use "mg979/vim-visual-multi"
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -116,14 +115,14 @@ return packer.startup(function(use)
   --  Markdown 
   use "iamcco/markdown-preview.nvim"
   
-  --  Gradle
-  use "aloussase/gradle.vim"
-
   -- Debugger
   use "mfussenegger/nvim-dap"
 
+  -- minimap
+  use "wfxr/minimap.vim"
   -- Android
 
+  use "onsails/diaglist.nvim"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
