@@ -33,8 +33,8 @@ local mode = {
 
 local filetype = {
 	"filetype",
-	icons_enabled = false,
-	icon = nil,
+	icons_enabled = true,
+	-- icon = nil,
 }
 
 local branch = {
@@ -48,26 +48,34 @@ local location = {
 	padding = 0,
 }
 
+local buffers = {
+  "buffers",
+  buffers_color = {
+    active = 'FF0000'
+  }
+}
 -- cool function for progress
 local progress = function()
 	local current_line = vim.fn.line(".")
 	local total_lines = vim.fn.line("$")
-	local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-	local line_ratio = current_line / total_lines
-	local index = math.ceil(line_ratio * #chars)
-	return chars[index]
+  return math.ceil((current_line / total_lines) * 100) .. " %%"
 end
 
 local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
+-- Tabline config
+local getFilePath = function ()
+  local currentPath = vim.fn.fnamemodify(vim.fn.expand("%"), ":~:.")
+  return(currentPath)
+end
+
 lualine.setup({
-	options = {
+  options = {
 		icons_enabled = true,
 		theme = "auto",
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
+		-- section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
 	},
@@ -76,7 +84,7 @@ lualine.setup({
 		lualine_b = { mode },
 		lualine_c = {},
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, spaces, "encoding", filetype },
+		lualine_x = { diff, spaces, "encoding",filetype },
 		lualine_y = { location },
 		lualine_z = { progress },
 	},
@@ -88,6 +96,9 @@ lualine.setup({
 		lualine_y = {},
 		lualine_z = {},
 	},
-	tabline = {},
+	tabline = {
+    lualine_a = {buffers},
+    lualine_z = {getFilePath}
+  },
 	extensions = {},
 })
