@@ -50,9 +50,6 @@ local location = {
 
 local buffers = {
   "buffers",
-  buffers_color = {
-    active = 'FF0000'
-  }
 }
 -- cool function for progress
 local progress = function()
