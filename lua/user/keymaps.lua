@@ -98,3 +98,4 @@ keymap('n','<TAB>',":Format <CR>",{})
 
 keymap('n','<C-d>','<cmd>lua require(\'diaglist\').open_all_diagnostics()<cr>',opts)
 
+keymap('n','O',":SymbolsOutline <CR>",opts)
