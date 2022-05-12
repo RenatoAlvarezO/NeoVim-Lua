@@ -113,7 +113,7 @@ return packer.startup(function(use)
   use "thosakwe/vim-flutter"  
 
   --  Markdown 
-  use "iamcco/markdown-preview.nvim"
+  -- use "iamcco/markdown-preview.nvim"
   
   -- Debugger
   use "mfussenegger/nvim-dap"
